@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondoinicio"
     tools:context=".fragments.InicioFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="222dp"
-        android:layout_height="213dp"
+        android:layout_width="154dp"
+        android:layout_height="125dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="89dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="80dp"
+        android:elevation="5dp"
         android:src="@drawable/logoinicio"></ImageView>
 
     <GridLayout
@@ -22,6 +25,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/logo"
         android:columnCount="2"
+        android:layout_marginBottom="20dp"
         android:padding="4dp"
         android:rowCount="3"
 
@@ -30,7 +34,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardAlimentos"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="184dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -88,7 +92,7 @@
                     android:layout_width="60dp"
                     android:layout_height="55dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/naranja" />
+                    android:src="@drawable/categoria" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -126,7 +130,7 @@
                     android:layout_width="60dp"
                     android:layout_height="55dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/naranja" />
+                    android:src="@drawable/productor" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -142,7 +146,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardAlimentos"
+            android:id="@+id/cardInfo"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -164,13 +168,13 @@
                     android:layout_width="60dp"
                     android:layout_height="55dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/naranja" />
+                    android:src="@drawable/info" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:text="Alimentos"
+                    android:text="Información"
                     android:textAlignment="center"
                     android:textColor="#44BFB2"
                     android:textSize="16sp"
