@@ -12,8 +12,23 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 import mx.localmarket.mercadolocal.R;
+import mx.localmarket.mercadolocal.models.Alimento;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +68,8 @@ public class InicioFragment extends Fragment {
         return fragment;
     }
 
+    ArrayList<String> alimentos;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,4 +99,6 @@ public class InicioFragment extends Fragment {
             }
         });
     }
+
+
 }
