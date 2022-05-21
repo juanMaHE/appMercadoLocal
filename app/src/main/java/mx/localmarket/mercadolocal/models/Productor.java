@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Alimento {
+public class Productor {
     private int id;
     private String nombre;
-    private int id_categoria;
-    private String descripcion;
-    private String imagen;
-    private Productor productor;
-
-
+    private String ap_paterno;
+    private String ap_materno;
+    private String sexo;
+    private int edad;
+    private int id_contacto;
 }

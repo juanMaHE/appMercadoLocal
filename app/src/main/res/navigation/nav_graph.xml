@@ -18,4 +18,9 @@
         android:name="mx.localmarket.mercadolocal.fragments.AlimentosFragment"
         android:label="fragment_alimentos"
         tools:layout="@layout/fragment_alimentos" />
+    <fragment
+        android:id="@+id/productorFragment"
+        android:name="mx.localmarket.mercadolocal.ProductorFragment"
+        android:label="fragment_productor"
+        tools:layout="@layout/fragment_productor" />
 </navigation>
