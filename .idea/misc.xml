@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/drawable/custom_button.xml" value="0.1765625" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/drawable/degradado.xml" value="0.30572916666666666" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/drawable/ic_back_button.xml" value="0.3828125" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/activity_splash.xml" value="0.25552208835341367" />
-        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_alimentos.xml" value="0.15489130434782608" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_alimentos.xml" value="0.25" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_inicio.xml" value="0.23052536231884058" />
-        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/item_list_alimentos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_productor.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/item_list_alimentos.xml" value="0.75" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/item_list_productores.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/iten_list_alimentos.xml" value="0.23822463768115942" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/xml/network_security_config.xml" value="0.25" />

@@ -15,4 +15,13 @@ public class Productor {
     private String sexo;
     private int edad;
     private int id_contacto;
+
+    public Productor(int id, String nombre, String apPaterno, String apMaterno, String sexo, int edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.ap_paterno = apPaterno;
+        this.ap_materno = apMaterno;
+        this.sexo = sexo;
+        this.edad = edad;
+    }
 }
