@@ -12,6 +12,12 @@
         <action
             android:id="@+id/action_inicioFragment_to_alimentosFragment"
             app:destination="@id/alimentosFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_proveedoresFragment"
+            app:destination="@id/proveedoresFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_categoriaFragment"
+            app:destination="@id/categoriaFragment" />
     </fragment>
     <fragment
         android:id="@+id/alimentosFragment"
@@ -37,4 +43,14 @@
             android:id="@+id/action_productorFragment_to_alimentosFragment2"
             app:destination="@id/alimentosFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/proveedoresFragment"
+        android:name="mx.localmarket.mercadolocal.fragments.ProveedoresFragment"
+        android:label="fragment_proveedores"
+        tools:layout="@layout/fragment_proveedores" />
+    <fragment
+        android:id="@+id/categoriaFragment"
+        android:name="mx.localmarket.mercadolocal.CategoriaFragment"
+        android:label="fragment_categoria"
+        tools:layout="@layout/fragment_categoria" />
 </navigation>

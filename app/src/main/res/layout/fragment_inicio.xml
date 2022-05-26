@@ -2,34 +2,40 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmegtoInicio"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondoinicio3"
     tools:context=".fragments.InicioFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="192dp"
-        android:layout_height="162dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="80dp"
-        android:elevation="5dp"
-        android:src="@drawable/logoinicio"></ImageView>
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="192dp"
+            android:layout_height="162dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="80dp"
+            android:elevation="5dp"
+            android:src="@drawable/logoinicio"></ImageView>
+    </LinearLayout>
+
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/logo"
+        android:layout_below="@+id/linear"
         android:layout_marginBottom="20dp"
         android:columnCount="2"
         android:padding="4dp"
-        android:rowCount="3"
-
-        >
+        android:rowCount="3">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardAlimentos"

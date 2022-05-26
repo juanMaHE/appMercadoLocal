@@ -18,6 +18,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,15 @@ import mx.localmarket.mercadolocal.models.Productor;
 
 public class ProductorFragment extends Fragment {
 
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
     TextView tvNombreProductor, tvTelefono, tvCorreo, tvDireccion;
 
     public ProductorFragment() {
@@ -52,52 +62,60 @@ public class ProductorFragment extends Fragment {
 
     }
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment ProveedoresFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static ProductorFragment newInstance(String param1, String param2) {
+        ProductorFragment fragment = new ProductorFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getParentFragmentManager().setFragmentResultListener("parametros", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                if (result.getInt("idProductor") == 0 ) {
-                    System.out.println(result.getInt("idProductor"));
-                } else {
-                    String param = result.getString("idProductor");
-                    System.out.println(result.getInt("idProductor"));
-                }
-            }
-        });
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_productor, container, false);
+        CargaProductor();
+        // Inflate the layout for this fragment
+        Toolbar toolbar = view.findViewById(R.id.toolBar);
+        toolbar.setNavigationIcon(R.drawable.ic_back_button);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.setReorderingAllowed(true);
+                AlimentosFragment fragment = new AlimentosFragment();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_in, R.anim.fade_out);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.replace(R.id.fragmentoP, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+        });
 
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        final NavController navController = Navigation.findNavController(view);
-        Toolbar toolbar = view.findViewById(R.id.toolBar);
-        toolbar.setNavigationIcon(R.drawable.ic_back_button);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                 getActivity().onBackPressed();
-                navController.navigate(R.id.alimentosFragment);
-//                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-//                Fragment fragment = new AlimentosFragment();
-//                activity.getSupportFragmentManager().beginTransaction()
-//                        .setCustomAnimations(R.anim.slide_in, R.anim.fade_out).replace(R.id.fragmentoP,fragment)
-//                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
-            }
-        });
-        CargaProductor();
 
 
     }
@@ -106,10 +124,11 @@ public class ProductorFragment extends Fragment {
 
 
         Bundle bundle = getArguments();
+        Log.d("Id Productor", String.valueOf(bundle.getInt("idProductor")));
 
 //         http:52.38.111.74:8076 int result = bundle.getInt("idProductor");
 //         http:10.0.2.2:8080   + bundle.getInt("idProductor")
-        String url = "http://52.38.111.74:8076/api/productor/1" ;
+        String url = "http://52.38.111.74:8076/api/productor/" + bundle.getInt("idProductor");
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
 //        Puede usar 10.0.2.2 para acceder a su máquina real, es un alias configurado para ayudar en el desarrollo.

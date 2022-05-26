@@ -1,6 +1,9 @@
 package mx.localmarket.mercadolocal.fragments;
 
 import android.os.Bundle;
+import android.service.carrier.CarrierMessagingService;
+import android.support.v4.media.MediaBrowserCompat;
+import android.support.v4.media.session.MediaSessionCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -46,17 +50,44 @@ public class AlimentosFragment extends Fragment {
     List<Alimento> alimentos;
     RecyclerView rvAlimentos;
 
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
 
     public AlimentosFragment() {
         // Required empty public constructor
     }
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment ProveedoresFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static AlimentosFragment newInstance(String param1, String param2) {
+        AlimentosFragment fragment = new AlimentosFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        CargalistaAlimtentos();
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,22 +100,31 @@ public class AlimentosFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        final NavController navController = Navigation.findNavController(view);
         Toolbar toolbar = view.findViewById(R.id.toolBarMain);
         toolbar.setNavigationIcon(R.drawable.ic_back_button);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().onBackPressed();
-//                AppCompatActivity activity = (AppCompatActivity) view.getContext();
-//                Fragment fragment = new InicioFragment();
-//                activity.getSupportFragmentManager().beginTransaction()
-//                        .setCustomAnimations(R.anim.slide_in, R.anim.fade_out).replace(R.id.fragmentAlimentos,fragment)
-//                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
-//                navController.navigate(R.id.inicioFragment);
+//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.setCustomAnimations(R.anim.slide_in,R.anim.fade_out);
+//                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//                fragmentTransaction.setReorderingAllowed(true);
+//                InicioFragment fragment = new InicioFragment();
+//                fragmentTransaction.replace(R.id.fragmentAlimentos, fragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+//
+                  getActivity().onBackPressed();
+//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.setReorderingAllowed(true);
+//                fragmentTransaction.replace(R.id.fragmentAlimentos, InicioFragment.newInstance("", ""));
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
             }
         });
-        CargalistaAlimtentos();
+
     }
 
 
@@ -113,7 +153,6 @@ public class AlimentosFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
                 rvAlimentos = (RecyclerView) getView().findViewById(R.id.rvAlimentos);
                 rvAlimentos.setLayoutManager(new LinearLayoutManager(getContext()));
                 RecyclerAdapterAlimentos recyclerAdapterAlimentos = new RecyclerAdapterAlimentos(alimentos);

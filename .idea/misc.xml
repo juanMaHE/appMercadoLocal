@@ -9,9 +9,12 @@
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/activity_splash.xml" value="0.25552208835341367" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_alimentos.xml" value="0.25" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_categoria.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_inicio.xml" value="0.23052536231884058" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_productor.xml" value="0.2210144927536232" />
-        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/item_list_alimentos.xml" value="0.75" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/fragment_proveedores.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/item_grid_categorias.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/item_list_alimentos.xml" value="0.2826086956521739" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/item_list_productores.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/layout/iten_list_alimentos.xml" value="0.23822463768115942" />
         <entry key="..\:/Users/Usuario1/AndroidStudioProjects/MercadoLocal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26614583333333336" />

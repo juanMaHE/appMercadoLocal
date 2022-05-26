@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardAlimentos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:src="@drawable/productor" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Proveedores"
+        android:textColor="#44BFB2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</androidx.cardview.widget.CardView>
+
+    <!--    android:layout_width="0dp"-->
+    <!--    android:layout_height="0dp"-->
+    <!--    android:layout_rowWeight="1"-->
+    <!--    android:layout_columnWeight="1"-->
+    <!--    android:layout_marginLeft="16dp"-->
+    <!--    android:layout_marginRight="16dp"-->
+    <!--    android:layout_marginBottom="10dp"-->
+    <!--    android:foreground="?selectableItemBackground"-->
+    <!--    app:cardCornerRadius="8dp"-->
+    <!--    app:cardElevation="6dp-->
