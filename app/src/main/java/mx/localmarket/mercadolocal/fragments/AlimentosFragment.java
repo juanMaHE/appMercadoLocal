@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -49,7 +50,7 @@ public class AlimentosFragment extends Fragment {
 
     List<Alimento> alimentos;
     RecyclerView rvAlimentos;
-
+    ProgressBar progressBar;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -94,6 +95,7 @@ public class AlimentosFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_alimentos, container, false);
+        progressBar= view.findViewById(R.id.progressBarAlimentos);
         return view;
     }
 
@@ -115,7 +117,7 @@ public class AlimentosFragment extends Fragment {
 //                fragmentTransaction.addToBackStack(null);
 //                fragmentTransaction.commit();
 //
-                  getActivity().onBackPressed();
+                getActivity().onBackPressed();
 //                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 //                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 //                fragmentTransaction.setReorderingAllowed(true);
@@ -157,6 +159,7 @@ public class AlimentosFragment extends Fragment {
                 rvAlimentos.setLayoutManager(new LinearLayoutManager(getContext()));
                 RecyclerAdapterAlimentos recyclerAdapterAlimentos = new RecyclerAdapterAlimentos(alimentos);
                 rvAlimentos.setAdapter(recyclerAdapterAlimentos);
+                progressBar.setVisibility(getView().GONE);
             }
         }, new Response.ErrorListener() {
             @Override

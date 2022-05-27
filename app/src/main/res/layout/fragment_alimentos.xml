@@ -8,6 +8,13 @@
     tools:context=".fragments.AlimentosFragment">
 
     <!-- TODO: Update blank fragment layout -->   <!-- TODO: Update blank fragment layout -->
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressBarAlimentos"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBarMain"
         android:layout_width="match_parent"

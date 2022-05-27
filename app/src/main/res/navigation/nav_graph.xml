@@ -50,7 +50,7 @@
         tools:layout="@layout/fragment_proveedores" />
     <fragment
         android:id="@+id/categoriaFragment"
-        android:name="mx.localmarket.mercadolocal.CategoriaFragment"
+        android:name="mx.localmarket.mercadolocal.fragments.CategoriaFragment"
         android:label="fragment_categoria"
         tools:layout="@layout/fragment_categoria" />
 </navigation>

@@ -86,6 +86,7 @@ public class InicioFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         CardView btnAlimentos = view.findViewById(R.id.cardAlimentos);
         CardView btnProveedores = view.findViewById(R.id.cardProveedores);
+        CardView btnCategorias = view.findViewById(R.id.cardCategorias);
         final NavController navController = Navigation.findNavController(view);
 
         btnAlimentos.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +115,21 @@ public class InicioFragment extends Fragment {
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 fragmentTransaction.replace(R.id.fragmegtoInicio, fragment);
                 fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnCategorias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.setReorderingAllowed(true);
+                CategoriaFragment fragment = new CategoriaFragment();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_in, R.anim.fade_out);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.replace(R.id.fragmegtoInicio, fragment);
+                fragmentTransaction.addToBackStack(null);//Esta línea es para guardar el estado de la pila
                 fragmentTransaction.commit();
             }
         });
